@@ -1,3 +1,9 @@
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.tile').forEach(tile => {
+    tile.classList.add('flipping'); /* Add class to start animation */
+  });
+});
+
 document.addEventListener("DOMContentLoaded", function() {
     const placeholder = document.querySelector('.placeholder')
     const footer = document.querySelector('footer')
