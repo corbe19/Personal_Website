@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: #cac5c5;
+    color: #fff;
+}
+
+header, main, .placeholder {
+    position: relative; /* crucial for z-index to work */
+  }
+  
+  header, main { 
+    z-index: 10; 
+  }
+  
+  .placeholder {
+    z-index: 1;
+    height: 177px; /* same as footer height */
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    z-index: 0;
+    height: 177px; 
+  }
+
+.container {
+    width: 100%; /* Already present */
+    height: 100vh; /* Fills the full viewport height */
+    position: relative; /* Ensures it stays in the document flow */
+    overflow: hidden; /* Prevents content overflow outside the container */
+    z-index: 1; /* Ensures it stays behind other sections */
+}
+
+section {
+  z-index: 0; /* Default stacking order */
+  position: relative; /* Ensures the z-index applies */
+  margin-top: 20px; /* Adds space to push sections below */
+}

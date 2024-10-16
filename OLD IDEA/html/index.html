@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/flippanel.css">
+    <script src="../scripts/script.js"></script>
+    <title>Luke W. Corbett</title>
+
+    <style>
+        /* Ensure the container fills the viewport */
+        #container {
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        section {
+            z-index: 0; /* Normal stacking order */
+            position: relative; /* To apply z-index */
+            margin-top: 20px; /* Adds space to push content below the tiles */
+        }
+
+        footer {
+            z-index: 0;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="container"></div>
+
+        <!-- JavaScript for flip panel -->
+        <script src="../scripts/flippanel.js"></script>
+        <script>
+            // Callback to fill the panel with contents
+            function myCallback(thisPanel) {
+            }
+            
+            // Settings for FlipPanel
+            var destination = document.getElementById('container');
+            var opts = {
+                nx: 6,
+                ny: 6,
+                imgFront: '../assets/hero1.png',
+                imgBack: '../assets/hero2.png',
+                ruffleTimer: 99999999999
+            };
+            
+            // Create FlipPanel
+            var myPanel = new FlipPanel(destination, myCallback, opts);
+
+        </script>
+    </main>
+</body>
+</html>
